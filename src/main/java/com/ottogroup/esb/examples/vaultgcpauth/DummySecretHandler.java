@@ -19,6 +19,7 @@ public class DummySecretHandler {
 
     @EventListener(ContextRefreshedEvent.class)
     public void processSecret(){
+        //Log the Secret in application log (not the best way to handle secrets, but for demo purpose its good enough :-) )
         logger.info("i can use this secret from vault: {}",secret);
     }
 }
