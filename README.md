@@ -11,9 +11,10 @@ The Integration is done with Spring Cloud Vault and for authentication a Google 
 
 You have to install following things on your machine to get it working:
 
-* Java 17 with ottogroup certificates included
+* Java 17 
 * Apache Maven >= 3.8.X
 * Access to GCP project and permission on it to create service accounts
+* gcloud installed and initialized
 
 # Getting Started
 
@@ -40,7 +41,7 @@ To get the key you need to generate it, to generate it, just click the "Add Key"
 
 Set the GOOGLE_APPLICATION_CREDENTIALS to the path of the json file.
 
-`export GOOGLE_APPLICSTION_CREDENTIALS=/path/to/your/json`
+`export GOOGLE_APPLICATION_CREDENTIALS=/path/to/your/json`
 
 ## Run the application
 after putting in all the information you can start the app by typing:
