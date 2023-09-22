@@ -32,16 +32,25 @@ With those information you can access Vault and put secrets to it. To read the r
 * application-name
 
 ## Put in credentials.json
-By default the app is configured to read out a file called credentials.json which is places directly inside the classpath on root level.
+By default, the app is configured to read out a file called credentials.json which is places directly inside the classpath on root level.
 In this file you need to add your service account key data in a json format.
 
 To get the key you need to generate it, to generate it, just click the "Add Key" Button on google console and generate a json key.
 ![](docs/add_key.png)
 
+Set the GOOGLE_APPLICATION_CREDENTIALS to the path of the json file.
+
+`export GOOGLE_APPLICSTION_CREDENTIALS=/path/to/your/json`
+
 ## Run the application
 after putting in all the information you can start the app by typing:
 
 `mvn spring-boot:run`
+
+## Deploy to Cloud Run
+Set up your local gcloud and set a project after that you can run following command to deploy it to Cloud Run
+
+`gcloud run deploy --service-account=<YOUR_SERVICE_ACCOUNT_EMAIL>`
 
 ### Reference Documentation
 
