@@ -1,0 +1,32 @@
+server.port: ${PORT:8080}
+spring.config.import: vault://
+spring.cloud.vault:
+  fail-fast: true # exit application in case of error
+  # connection properties for Vault instance
+  host: vault.example.com
+  port: 443
+  scheme: https
+  # authentication method for authentication at Vault
+  authentication: GCP_IAM
+  gcp-iam: # Role created in Vault for GCP IAM authentication. Must be replaced for usage outside this example.
+    role: gcp-auth-example-app
+    service-account-id: vault-gcp-auth-example-app@myproject.iam.gserviceaccount.com
+  connection-timeout: 5000
+  read-timeout: 15000
+  # configuration for Vault generic secret engine (version 1)
+  config:
+    lifecycle:
+      enabled: true
+      # if the renew was not successful wait this amount of time before retry
+      min-renewal: 30s
+      # Time before lease expires and Spring Cloud Vault tries to renew the lease (lease is valid for 1h and with this threshold, spring cloud vault tries to renew the lease 30m before it expires) (we must survive the autopatch of Vault Dockerhosts)
+      expiry-threshold: 30m
+      lease-endpoints: Leases
+  kv:
+    enabled: true
+    # Name of backend secret engine. Must be replaced for usage outside this example.
+    backend: secret
+    profile-separator: '/'
+    # Path in Vault where key-value pairs exist. Must be replaced for usage outside this example.
+    default-context: path/test
+    application-name: path/test
