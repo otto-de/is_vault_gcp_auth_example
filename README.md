@@ -1,5 +1,5 @@
 # Example Application to access Hashicorp Vault with GCP IAM authentication
-![OSS Lifecycle](https://img.shields.io/osslifecycle?file_url=https://img.shields.io/osslifecycle?file_url=https%3A%2F%2Fgithub.com%2Fotto-de%2Fis_vault_gcp_auth_example%2Fblob%2Fmain%2FOSSMETADATA)
+![OSS Lifecycle](https://img.shields.io/osslifecycle?file_url=https%3A%2F%2Fgithub.com%2Fotto-de%2Fis_vault_gcp_auth_example%2Fblob%2Fmain%2FOSSMETADATA)
 
 # Introduction
 In your Cloud environment its sometime necessary to handle sensitive data. A good approach is always to put the sensitive data to a key management system. 
